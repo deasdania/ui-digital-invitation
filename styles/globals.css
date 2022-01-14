@@ -1,0 +1,120 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: rgb(138, 83, 123);
+  background: rgba(138, 83, 123, 1) 12%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  color: white;
+  font-weight: 700;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+header ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px;
+  overflow: hidden;
+}
+
+header ul li a {
+  position: relative;
+  font-weight: 500;
+  padding: 6px 10px;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1em;
+  height: 30px;
+  z-index: 10;
+}
+header ul li a:hover {
+  color: #f2aa08;
+}
+header .nav {
+  position: relative;
+  width: 100%;
+}
+header #indicator {
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 0;
+  height: 4px;
+  background-color: #f2aa08;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+  z-index: 9;
+}
+
+.container-home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgb(202, 153, 189) 12%,
+    rgba(56, 64, 138, 1) 100%
+  );
+  overflow: hidden;
+}
+.container-home:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgb(138, 83, 123);
+  background: linear-gradient(
+    0deg,
+    rgba(138, 83, 123, 1) 31%,
+    rgba(56, 64, 138, 0) 100%
+  );
+  width: 100%;
+  height: 100px;
+}
+.container-home .container-home-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.container-home .container-home-image#cloud_img {
+  top: 200px;
+  right: 0;
+}
+.container-home .container-home-image#front_img {
+  top: 430px;
+}
+.container-home .container-home-image#back_img {
+  top: 340px;
+}
