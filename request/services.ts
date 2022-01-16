@@ -1,6 +1,4 @@
 import axios, {AxiosInstance} from "axios";
-import {Pod} from "../server/models/pod";
-
 class Services {
     private service: AxiosInstance;
     constructor() {
