@@ -5,17 +5,16 @@ function Index() {
   const indicator: any = useRef();
   const home: any = createRef();
   const about: any = createRef();
-  const portfolio: any = createRef();
-  const product: any = createRef();
-  const contact: any = createRef();
+  const types: any = createRef();
+  const login: any = createRef();
   const [path, setPath] = useState("");
   const router = useRouter();
 
   useEffect(() => {
     setPath(router.asPath);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   useEffect(() => {
     // Handler to call on window resize
     function handleResize() {
@@ -32,16 +31,14 @@ function Index() {
     return () => window.removeEventListener("resize", handleResize);
   }, [path]);
   const checkIndicartor = (p) => {
-    if (p === "/#" || p === "/#home" || p === "/") {
+    if (p === "/#" || p === "/#beranda" || p === "/") {
       indicators(home.current);
-    } else if (p === "/#about") {
+    } else if (p === "/#tentang-kami") {
       indicators(about.current);
-    } else if (p === "/#portfolio") {
-      indicators(portfolio.current);
-    } else if (p === "/#product") {
-      indicators(product.current);
-    } else if (p === "/#contact") {
-      indicators(contact.current);
+    } else if (p === "/#jenis-undangan") {
+      indicators(types.current);
+    } else if (p === "/masuk") {
+      indicators(login.current);
     }
   };
   const indicators = (e) => {
@@ -50,7 +47,7 @@ function Index() {
   };
   return (
     <header>
-      <a href="#home" className="logo">
+      <a href="#beranda" onClick={() => setPath("/#beranda")} className="logo">
         LOGO
       </a>
       <div className="nav">
@@ -58,51 +55,41 @@ function Index() {
           <li ref={home} className="list active">
             <a
               onMouseLeave={() => checkIndicartor(path)}
-              onClick={() => setPath("/#home")}
+              onClick={() => setPath("/#beranda")}
               onMouseEnter={(e) => indicators(e.target)}
-              href="#home"
+              href="#beranda"
             >
-              Home
+              Beranda
             </a>
           </li>
           <li ref={about} className="list">
             <a
               onMouseLeave={() => checkIndicartor(path)}
-              onClick={() => setPath("/#about")}
+              onClick={() => setPath("/#tentang-kami")}
               onMouseEnter={(e) => indicators(e.target)}
-              href="#about"
+              href="#tentang-kami"
             >
-              About
+              Tentang Kami
             </a>
           </li>
-          <li ref={portfolio} className="list">
+          <li ref={types} className="list">
             <a
               onMouseLeave={() => checkIndicartor(path)}
-              onClick={() => setPath("/#portfolio")}
+              onClick={() => setPath("/#jenis-undangan")}
               onMouseEnter={(e) => indicators(e.target)}
-              href="#portfolio"
+              href="#jenis-undangan"
             >
-              Portfolio
+              Jenis Undangan
             </a>
           </li>
-          <li ref={product} className="list">
+          <li ref={login} className="list">
             <a
               onMouseLeave={() => checkIndicartor(path)}
-              onClick={() => setPath("/#product")}
+              onClick={() => setPath("/masuk")}
               onMouseEnter={(e) => indicators(e.target)}
-              href="#product"
+              href="masuk"
             >
-              Product
-            </a>
-          </li>
-          <li ref={contact} className="list">
-            <a
-              onMouseLeave={() => checkIndicartor(path)}
-              onClick={() => setPath("/#contact")}
-              onMouseEnter={(e) => indicators(e.target)}
-              href="#contact"
-            >
-              Contact
+              Masuk
             </a>
           </li>
         </ul>
